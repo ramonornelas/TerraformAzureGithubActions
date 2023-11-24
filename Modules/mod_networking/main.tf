@@ -2,23 +2,23 @@
 resource "azurerm_virtual_network" "mainvnet" {
   name                = "${var.prefix}-MainVNet"
   address_space       = ["${var.vnetaddressspace}"]
-  location            = "${var.location}"
-  resource_group_name = "${var.rgname}"
+  location            = var.location
+  resource_group_name = var.rgname
 }
 
 #Creates Internal Subnet to allocate IP to VM
 resource "azurerm_subnet" "mainsubnet" {
   name                 = "MainSubnet"
-  resource_group_name  = "${var.rgname}"
-  virtual_network_name = "${azurerm_virtual_network.mainvnet.name}"
+  resource_group_name  = var.rgname
+  virtual_network_name = azurerm_virtual_network.mainvnet.name
   address_prefixes     = ["${var.vnetsubnet}"]
   service_endpoints    = ["Microsoft.Storage"]
 }
 
 resource "azurerm_network_security_group" "corensg" {
   name                = "corensg"
-  location            = "${var.location}"
-  resource_group_name = "${var.rgname}"
+  location            = var.location
+  resource_group_name = var.rgname
 
   security_rule {
     name                       = "allowrdp"
