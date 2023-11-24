@@ -29,3 +29,7 @@ variable "vmadminusername" {
   description = "Enter administrator username for VM"
   default     = "tfadmin"
 }
+
+variable "adminuserobjectid" {
+  description = "Object ID for the admin user"
+}

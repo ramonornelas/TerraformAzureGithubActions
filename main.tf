@@ -23,6 +23,7 @@ module "core_keyvault" {
   rgname   = module.core_rg.name
   location = var.location
   kvname   = "corekeyvault"
+  adminuserobjectid = var.adminuserobjectid
 }
 
 #Calls mod_vmworkstation to create Windows10 VM

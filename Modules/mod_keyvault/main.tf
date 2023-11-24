@@ -60,9 +60,10 @@ resource "azurerm_key_vault" "keyvault" {
   }
 
   #Creates Access Policy for Azure Admin
+  
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = adminuserobjectid
+    object_id = var.adminuserobjectid
     certificate_permissions = [
       "Create",
       "Delete",
