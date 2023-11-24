@@ -18,11 +18,11 @@ module "core_network" {
 
 #Calls mod_keyvault to create Key Vault and VM admin secret
 module "core_keyvault" {
-  source   = "./Modules/mod_keyvault"
-  prefix   = var.prefix
-  rgname   = module.core_rg.name
-  location = var.location
-  kvname   = "corekeyvault"
+  source            = "./Modules/mod_keyvault"
+  prefix            = var.prefix
+  rgname            = module.core_rg.name
+  location          = var.location
+  kvname            = "corekeyvault"
   adminuserobjectid = var.adminuserobjectid
 }
 
