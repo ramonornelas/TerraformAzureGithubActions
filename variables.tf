@@ -29,3 +29,8 @@ variable "vmadminusername" {
   description = "Enter administrator username for VM"
   default     = "tfadmin"
 }
+
+#Azure Admin User Obejct ID
+variable "adminuserobjectid" {
+  description = "Value stored in Terraform Cloud as variable"
+}
