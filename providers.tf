@@ -1,14 +1,15 @@
 #Defines Provider
 provider "azurerm" {
-    features {}
+  features {}
 }
 
-#Sends tfstate to azure blob
 terraform {
-  backend "azurerm" {
-    resource_group_name  = "tf-AzureLab-tfState-RG"
-    storage_account_name = "azurelabtfstatesa"
-    container_name       = "azurelabtfstatecn"
-    key                  = "terraformazuredemo.tfstate"
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "orionscaled"
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "azuregithubactions"
+    }
   }
 }
