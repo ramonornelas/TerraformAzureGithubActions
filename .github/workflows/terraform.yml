@@ -79,8 +79,8 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-    - name: Add Azure CLI to PATH
-      run: echo "##[add-path]/usr/bin/azure-cli"
+    - name: Configure Azure CLI
+      run: az --version
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
