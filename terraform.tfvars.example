@@ -1,0 +1,25 @@
+#Provider Section
+variable "subscriptionid" {
+  description = "Enter Subscription ID for provisioning resources in Azure"
+  subscriptionid  = ""
+}
+variable "clientid" {
+  description = "Enter Client ID for Application created in Azure AD"
+  clientid        = ""
+}
+variable "clientsecret" {
+  description = "Enter Client secret for Application in Azure AD"
+  clientsecret    = ""
+}
+variable "tenantid" {
+  description = "Enter Tenant ID / Directory ID of your Azure AD. Run Get-AzureSubscription to know your Tenant ID"
+  tenantid        = ""
+}
+
+/*    
+#Environment variables can be used on local console and circleci context
+$Env:ARM_CLIENT_ID=""
+$Env:ARM_CLIENT_SECRET=""
+$Env:ARM_SUBSCRIPTION_ID=""
+$Env:ARM_TENANT_ID=""
+*/
